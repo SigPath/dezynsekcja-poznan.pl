@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /.git/
+
+# Sitemaps
+Sitemap: https://SigPath.github.io/dezynsekcja-poznan.pl/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Contact rate
+Contact: mailto:kontakt@dezynsekcja-poznan.pl
