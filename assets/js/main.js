@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQAccordion();
   initFormValidation();
   initSmoothScroll();
+  initCookieBanner();
 });
 
 // Update year dynamically
@@ -302,5 +303,53 @@ function initSmoothScroll() {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+  });
+}
+
+// ========================================
+// GDPR COOKIE BANNER
+// ========================================
+
+function initCookieBanner() {
+  // Check if user has already made a choice
+  const cookieConsent = localStorage.getItem('gdpr_cookie_consent');
+  
+  if (cookieConsent) {
+    // User already made a choice, don't show banner
+    return;
+  }
+
+  // Create banner HTML
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <div class="cookie-banner-content">
+      <p><strong>🍪 Pliki cookies GDPR</strong><br>
+      Używamy Google Analytics (GA4) do analizy ruchu. Naciśnij "Akceptuję", aby zgodzić się na śledzenie. <a href="javascript:void(0)" onclick="alert('Polityka prywatności: Zbieramy dane o wizytach do analizy. Możesz zrezygnować w każdej chwili.')">Polityka prywatności</a></p>
+    </div>
+    <div class="cookie-banner-buttons">
+      <button class="btn-decline" id="cookie-decline">Odrzuć</button>
+      <button class="btn-accept" id="cookie-accept">Akceptuję</button>
+    </div>
+  `;
+
+  document.body.appendChild(banner);
+
+  // Handle Accept button
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    localStorage.setItem('gdpr_cookie_consent', 'accepted');
+    localStorage.setItem('gdpr_consent_date', new Date().toISOString());
+    banner.style.animation = 'slideUp 0.3s ease-out reverse forwards';
+    setTimeout(() => banner.remove(), 300);
+    console.log('✅ Cookies accepted');
+  });
+
+  // Handle Decline button
+  document.getElementById('cookie-decline').addEventListener('click', () => {
+    localStorage.setItem('gdpr_cookie_consent', 'declined');
+    localStorage.setItem('gdpr_consent_date', new Date().toISOString());
+    banner.style.animation = 'slideUp 0.3s ease-out reverse forwards';
+    setTimeout(() => banner.remove(), 300);
+    console.log('❌ Cookies declined');
   });
 }
