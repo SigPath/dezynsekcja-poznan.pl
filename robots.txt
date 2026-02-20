@@ -10,5 +10,5 @@ Sitemap: https://SigPath.github.io/dezynsekcja-poznan.pl/sitemap.xml
 Crawl-delay: 1
 Request-rate: 30/60
 
-# Contact rate
-Contact: mailto:kontakt@dezynsekcja-poznan.pl
+# Contact via phone
+Contact: tel:+48720638628

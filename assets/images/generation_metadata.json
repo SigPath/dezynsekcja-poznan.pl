@@ -1,0 +1,122 @@
+{
+  "project": "dezynsekcja-poznan.pl",
+  "generation_date": "20.02.2026",
+  "total_images": 18,
+  "specs": {
+    "width": 1200,
+    "height": 800,
+    "format": "jpg",
+    "quality": 95,
+    "model": "flux-1-pro"
+  },
+  "images": [
+    {
+      "filename": "dezynsekcja-hero-poznan.jpg",
+      "alt": "Technician w białym kombinezonie opryskuje pluskwy z rozpylacza w poznańskim mieszkaniu",
+      "prompt_length": 679,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynsekcja-procedure-metoda.jpg",
+      "alt": "Generator ULV tworzy mgłę owadobójczą w odławianym rogu sypialni",
+      "prompt_length": 592,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynsekcja-bed-inspection.jpg",
+      "alt": "Inspektor sprawdza szwy materaca latarką w poszukiwaniu śladów pluskiew",
+      "prompt_length": 598,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-hero-poznan.jpg",
+      "alt": "Technician instaluje staację deratyzacyjną pod zlewem w poznańskiej kuchni",
+      "prompt_length": 676,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-monitoring-kontrola.jpg",
+      "alt": "Kontrola spożycia w deratyzacyjnej stacji monitoringowej - dokumentacja usługi",
+      "prompt_length": 565,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-evidence-droppings.jpg",
+      "alt": "Ślady fecesów myszy wzdłuż listwy bazowej - dowód infestacji w mieszkaniu",
+      "prompt_length": 594,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynfekcja-hero-oprysk.jpg",
+      "alt": "Pracownik w białym kombinezonie opryskuje biuro liśćmi owadobójczymi - dezynfekcja pomieszczeń",
+      "prompt_length": 667,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynfekcja-ulv-chamber.jpg",
+      "alt": "Generator ULV tworzy rozprysk dezynfekcyjny w małym pokoju - mgła rozsiewająca się po pomieszzczeniu",
+      "prompt_length": 643,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "ozonowanie-hero-generator.jpg",
+      "alt": "Generator ozonu w poznańskim apartamencie - ozonowanie do eliminacji zapachów i bakterii",
+      "prompt_length": 702,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "ozonowanie-air-quality-result.jpg",
+      "alt": "Świeżość i czystość powietrza po ozonowaniu - apartament wietrzony, jasne naturalne światło",
+      "prompt_length": 693,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "pluskwy-srodmiescie-kamienic-poznan.jpg",
+      "alt": "Opryskiwanie obudowy grzejnika w starej poznańskiej kamienicy śródmieścia - typowa architektura XIX wieku",
+      "prompt_length": 672,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "pluskwy-jezyce-blok-poznan.jpg",
+      "alt": "Zabieg dezynsekcji w typowym blokowiskakim mieszkaniu dzielnicy Jeżyce - funkcjonalne wnętrze z lat 80",
+      "prompt_length": 570,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-grunwald-nowy-apartament.jpg",
+      "alt": "Instalacja monitoringu szczurów w nowoczesnym apartamencie Grunwaldu - nowoczesne wnętrze post-2010",
+      "prompt_length": 583,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-winogrady-dom-poznan.jpg",
+      "alt": "Deratyzacja w domku jednorodzinnym Winogrady - zabudowania w piwnicy i strefy wejścia",
+      "prompt_length": 523,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynfekcja-rataje-biuro-poznan.jpg",
+      "alt": "Dezynfekcja powierzchni biurowych w Ratajach - opryskiwanie stand-ów pracy i liczników",
+      "prompt_length": 538,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "ozonowanie-nowe-miasto-nowoczesny-apartament.jpg",
+      "alt": "Ozonowanie nowoczesnego apartamentu w Nowym Mieście - procedura czyszczenia powietrza w nowej zabudowie",
+      "prompt_length": 519,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "dezynsekcja-wilda-klatka-schodowa.jpg",
+      "alt": "Opryskiwanie wspólnej klatki schodowej w Wildzie - zabezpieczenie budynku wielorodzinnego",
+      "prompt_length": 555,
+      "status": "pending_generation"
+    },
+    {
+      "filename": "deratyzacja-piatkowo-dom-poznan.jpg",
+      "alt": "Kompleksowa deratyzacja domu rodzinnego w Piątkowie - strategiczne umieszczenie stacji monitoringowych",
+      "prompt_length": 484,
+      "status": "pending_generation"
+    }
+  ]
+}

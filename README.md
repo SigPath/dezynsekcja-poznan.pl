@@ -163,8 +163,8 @@ All phone links use `tel:` protocol. To update:
 ### Business Information
 Update footer/header with actual business details:
 - Address: Search for "ul. Przykladowa"
-- Email: Search for "kontakt@dezynsekcja-poznan"
 - Hours: Currently "24/7" (modify as needed)
+- Contact: Phone +48720638628 or WhatsApp
 
 ---
 
