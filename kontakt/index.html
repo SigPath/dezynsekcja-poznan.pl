@@ -6,17 +6,25 @@
   <title>Kontakt | dezynsekcja-poznan.pl</title>
   <meta name="description" content="Kontakt z dezynsekcja-poznan.pl. Telefon 24/7, WhatsApp, formularz online. Dojazd 2h w Poznaniu.">
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- GA4 TRACKING (replace with your actual measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
   <header><div class="container navbar"><a class="brand" href="/"><span class="dot"></span><span>Dezynsekcja Poznań</span></a><nav class="nav-links"><a href="/dezynsekcja-poznan">Dezynsekcja</a><a href="/deratyzacja-poznan">Deratyzacja</a><a href="/cennik">Cennik</a><a href="/kontakt" class="cta-btn">Kontakt</a></nav></div></header>
   <main class="container">
-    <div class="breadcrumbs"><a href="/">Strona główna</a> / Kontakt</div>
     <section class="hero-mini">
-      <h1>Kontakt — odbieramy w 15 sekund, działamy 24/7</h1>
-      <p>Telefon i WhatsApp dostępne całą dobę. Dojazd w 2h w granicach Poznania.</p>
-      <div class="contact-actions">
-        <a class="cta-btn" href="tel:+48600000000">Zadzwoń</a>
-        <a class="cta-btn" style="background: rgba(56,189,248,0.18); color: #fff; box-shadow: none;" href="https://wa.me/48600000000" target="_blank" rel="noreferrer">WhatsApp</a>
+      <h1>🚨 Problem z owadami lub gryzoniami? Dzwonimy w 15 sekund, działamy w 2h</h1>
+      <p style="font-size: 17px; margin-top: 12px;">Nie czekaj — każdy dzień to +40% populacji insektów. Podaj numer, a my przezwonimy i umówimy wizytę z ceną.</p>
+      <div class="contact-actions" style="margin-top: 20px;">
+        <a class="cta-btn" href="tel:+48600000000">📞 Dzwoń teraz</a>
+        <a class="cta-btn" style="background: rgba(16, 185, 129, 0.25); border: 2px solid var(--success); color: var(--success);" href="https://wa.me/48600000000" target="_blank" rel="noreferrer">💬 WhatsApp</a>
       </div>
     </section>
 
@@ -31,18 +39,86 @@
     </section>
 
     <section class="section">
-      <h2>Formularz online</h2>
-      <form class="form">
-        <label>Imię i nazwisko<input type="text" name="name" placeholder="Jan Kowalski"></label>
-        <label>Telefon<input type="tel" name="phone" placeholder="600 000 000"></label>
-        <label>Email<input type="email" name="email" placeholder="adres@email.pl"></label>
-        <label>Opis problemu<textarea name="message" placeholder="Opisz szkodnika, metraż, dzielnicę"></textarea></label>
-        <button class="cta-btn" type="submit">Wyślij zgłoszenie</button>
+      <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
+      <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
+      <form class="form" name="contact_form">
+        <label>
+          <strong>Imię i nazwisko*</strong>
+          <input type="text" name="name" placeholder="Jan Kowalski" required>
+        </label>
+        <label>
+          <strong>Telefon*</strong>
+          <input type="tel" name="phone" placeholder="600 000 000" required>
+        </label>
+        <label>
+          <strong>Problem (co się dzieje?)*</strong>
+          <select name="problem_type" required>
+            <option value="">— Wybierz —</option>
+            <option value="pluskwy">🪳 Pluskwy w łóżku/meblach</option>
+            <option value="karaluchy">🦗 Karaluchy w kuchni</option>
+            <option value="mrowki">🐜 Mrówki – zarażenie</option>
+            <option value="osy">🐝 Osy/szerszenie – gniazdo</option>
+            <option value="szczury">🐭 Szczury – słyszę je w ścianach</option>
+            <option value="myszy">🐭 Myszy – odchody w domu</option>
+            <option value="inne">Inne – opisz w polu poniżej</option>
+          </select>
+        </label>
+        <label>
+          <strong>Dodatkowe info (opcjonalnie)</strong>
+          <textarea name="message" placeholder="Metraż, dzielnica, już próbowałeś coś? Zdjęcia możesz wysłać na WhatsApp."></textarea>
+        </label>
+        <button class="cta-btn" type="submit">✅ Wyślij zapytanie</button>
       </form>
-      <p class="lead" style="margin-top: 10px;">Załącz zdjęcia w wiadomości WhatsApp, przyspiesza wycenę.</p>
+      <div class="highlight" style="margin-top: 16px;">
+        💡 <strong>Porada:</strong> Wysyłając formularz, możesz otrzymać SMS z linkiem do WhatsApp. Dołącz tam zdjęcia — to przyśpiesza wycenę.
+    <section class="section">
+      <h2>Najczęstsze pytania — kontakt</h2>
+      <div class="grid-2">
+        <div class="faq-item"><h4>Możesz przyjechać dzisiaj?</h4><p>Jeśli zadzwonisz do 14:00, możemy być u Ciebie o 16:00–18:00 (w granicach Poznania). Po 22:00 mamy tryb nocny z opóźnieniem.</p></div>
+        <div class="faq-item"><h4>Jaka będzie wycena?</h4><p>Przybliżona cena na telefonie (typ problemu, metraż). Ostateczna cena ustalana podczas wizyty (mogą być dodatkowe koszty za oprysk/żelowanie).</p></div>
+        <div class="faq-item"><h4>Czy wysyłacie raporty/faktury?</h4><p>Tak — raport PDF po wizycie, faktura VAT jeśli wymagana (B2B). Dla wspólnot: dokumentacja zeznania dla sanepidu.</p></div>
+        <div class="faq-item"><h4>Co jeśli problem wróci w 30 dni?</h4><p>Darmowy powrót bez dodatkowej opłaty (dotyczy pluskiew i karaluchów). Zgłoś do 48h po zabiegu.</p></div>
+      </div>
+    </section>
+
+    <section class="section" style="background: rgba(220, 38, 38, 0.08); padding: 40px 0; margin: 20px -20px; border-radius: 16px;">
+      <div class="container">
+        <h2>🚨 W STANACH AWARYJNYCH</h2>
+        <p class="lead">Jeśli liczba owadów eksploduje lub sprawdzisz mieszkanie nocą i zanikamujesz:</p>
+        <div class="contact-box">
+          <strong style="font-size: 18px; color: var(--primary);">☎️ +48 600 000 000</strong>
+          <p>Odbieramy zawsze, nawet o 3:00 nad ranem. Możemy przybyć w razie BARDZO PILNYM w ciągu 4h (nocą +100 zł).</p>
+        </div>
+      </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-top"><div><h4>Kontakt</h4><p>Tel: <a href="tel:+48600000000">+48 600 000 000</a></p></div><div><h4>Linki</h4><ul><li><a href="/opinie">Opinie</a></li><li><a href="/cennik">Cennik</a></li></ul></div></div><div class="container" style="margin-top: 12px; color: var(--muted);">© <span data-year>2026</span> dezynsekcja-poznan.pl</div></footer>
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <h4>🚨 POGOTOWIE 24/7</h4>
+        <p style="font-weight: 700; color: var(--primary);">Odbieramy w 15 sekund, działamy w 2h!</p>
+        <p style="margin-top: 12px;">Tel: <a href="tel:+48600000000" style="font-weight: 700; color: var(--primary);">+48 600 000 000</a><br>WhatsApp: <a href="https://wa.me/48600000000">Napisz teraz</a></p>
+      </div>
+      <div>
+        <h4>Usługi</h4>
+        <ul>
+          <li><a href="/dezynsekcja-poznan">🪳 Dezynsekcja</a></li>
+          <li><a href="/deratyzacja-poznan">🐭 Deratyzacja</a></li>
+          <li><a href="/dezynfekcja-poznan">🧼 Dezynfekcja</a></li>
+          <li><a href="/cennik">Cennik</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informacje</h4>
+        <ul>
+          <li><a href="/opinie">Opinie (4.9★)</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/b2b/restauracje">Dla biznesu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 14px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px;">© <span data-year>2026</span> dezynsekcja-poznan.pl — Profesjonalna dezynsekcja, deratyzacja i dezynfekcja 24/7.</div>
+  </footer>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
