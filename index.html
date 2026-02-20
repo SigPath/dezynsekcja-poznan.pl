@@ -17,6 +17,78 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA4 property ID
   </script>
+
+  <!-- LOCAL BUSINESS SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dezynsekcja Poznań",
+    "image": "https://dezynsekcja-poznan.pl/images/logo.png",
+    "description": "Profesjonalna dezynsekcja, deratyzacja i dezynfekcja w Poznaniu. Dojazd w 2h, gwarancja 30 dni, dostępne 24/7.",
+    "url": "https://dezynsekcja-poznan.pl",
+    "telephone": "+48 600 000 000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Poznańska 10",
+      "addressLocality": "Poznań",
+      "addressRegion": "Wielkopolskie",
+      "postalCode": "61-001",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "52.409",
+      "longitude": "16.931"
+    },
+    "areaServed": [
+      "Poznań",
+      "Poznańskie",
+      "Wielkopolskie"
+    ],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "300"
+    },
+    "sameAs": [
+      "https://www.facebook.com/dezynsekcja-poznan",
+      "https://www.google.com/maps/place/dezynsekcja-poznan"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "service": [
+      {
+        "@type": "Service",
+        "name": "Dezynsekcja",
+        "description": "Usługi zwalczania insektów: pluskwy, karaluchy, osy, szerszenie"
+      },
+      {
+        "@type": "Service",
+        "name": "Deratyzacja",
+        "description": "Zwalczanie gryzoni: myszy, szczury"
+      },
+      {
+        "@type": "Service",
+        "name": "Dezynfekcja",
+        "description": "Ozonowanie, usuwanie bakterii, wirusów, grzybów"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -161,6 +233,27 @@
             <span class="tag">Checklista</span>
             <span class="tag">Raport PDF</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(220, 38, 38, 0.08) 100%); padding: 40px 20px; border-radius: 12px; text-align: center;">
+      <h2>🎁 Pobierz Darmową Checklist</h2>
+      <p class="lead" style="color: var(--text);">Jak przygotować mieszkanie do dezynsekcji — PDF poradnik krok-po-kroku</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 600px; margin: 30px auto;">
+        <div style="text-align: left;">
+          <h4 style="color: var(--primary); margin-bottom: 12px;">Checklist zawiera:</h4>
+          <ul class="list" style="font-size: 0.95em;">
+            <li>✓ 12-punktowa lista przygotowań</li>
+            <li>✓ Co zabrać, co schować</li>
+            <li>✓ Gdzie się ukryć (4 opcje)</li>
+            <li>✓ Timeline bezpieczeństwa po zabiegu</li>
+            <li>✓ Bonus: 7 produktów do mieć</li>
+          </ul>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <a href="/lead-magnet" class="cta-btn" style="background: var(--primary); color: white; text-align: center; margin-bottom: 12px;">📥 Pobierz PDF za Darmo</a>
+          <p style="font-size: 0.85em; color: var(--muted);">+ dostęp do ekskluzywnych artykułów i ofert</p>
         </div>
       </div>
     </section>
