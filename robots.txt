@@ -4,7 +4,7 @@ Disallow: /assets/
 Disallow: /.git/
 
 # Sitemaps
-Sitemap: https://SigPath.github.io/dezynsekcja-poznan.pl/sitemap.xml
+Sitemap: https://dezynsekcja-poznan.pl/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
