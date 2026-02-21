@@ -293,3 +293,31 @@ header {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.article-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--background-secondary);
+}
+
+.article-item span {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.article-item .cta-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  font-size: 14px;
+}
