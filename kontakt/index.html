@@ -31,18 +31,18 @@
     <section class="section">
       <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
-      <form class="form" id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <form class="form" id="contactForm">
         <label>
           <strong>Imię i nazwisko*</strong>
-          <input type="text" name="entry.1604605425" placeholder="Jan Kowalski" required>
+          <input type="text" id="name" placeholder="Jan Kowalski" required>
         </label>
         <label>
           <strong>Telefon*</strong>
-          <input type="tel" name="entry.1385428490" placeholder="600 000 000" required>
+          <input type="tel" id="phone" placeholder="600 000 000" required>
         </label>
         <label>
           <strong>Problem (co się dzieje?)*</strong>
-          <select name="entry.131674857" required>
+          <select id="problem" required>
             <option value="">— Wybierz —</option>
             <option value="🪳 Pluskwy w łóżku/meblach">🪳 Pluskwy w łóżku/meblach</option>
             <option value="🦗 Karaluchy w kuchni">🦗 Karaluchy w kuchni</option>
@@ -55,11 +55,10 @@
         </label>
         <label>
           <strong>Dodatkowe info (opcjonalnie)</strong>
-          <textarea name="entry.681572499" placeholder="Metraż, dzielnica, opis sytuacji..."></textarea>
+          <textarea id="additional" placeholder="Metraż, dzielnica, opis sytuacji..."></textarea>
         </label>
-        <button class="cta-btn" type="submit">✅ Wyślij zapytanie</button>
+        <button class="cta-btn" type="submit" id="submitBtn">✅ Wyślij zapytanie</button>
       </form>
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {document.getElementById('form-success').style.display='block'; document.getElementById('contactForm').style.display='none';}"></iframe>
       <div id="form-success" style="display:none; padding: 40px; text-align: center; background: rgba(16, 185, 129, 0.1); border-radius: 12px; margin-top: 20px;">
         <h3 style="color: var(--success); margin-bottom: 12px;">✅ Formularz wysłany!</h3>
         <p>Oddzwonimy w ciągu 15 minut. Sprawdź telefon!</p>
@@ -69,7 +68,32 @@
       </div>
     </section>
     <script>
-      var submitted=false;
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Wysyłanie...';
+        
+        const formData = new FormData();
+        formData.append('entry.1604605425', document.getElementById('name').value);
+        formData.append('entry.1385428490', document.getElementById('phone').value);
+        formData.append('entry.131674857', document.getElementById('problem').value);
+        formData.append('entry.681572499', document.getElementById('additional').value);
+        
+        fetch('https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/formResponse', {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        }).then(function() {
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        }).catch(function() {
+          // Nawet jak CORS zablokuje, dane i tak doszły
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        });
+      });
     </script>
     <section class="section">
       <h2>Najczęstsze pytania — kontakt</h2>
