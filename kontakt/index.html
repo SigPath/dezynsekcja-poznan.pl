@@ -6,6 +6,33 @@
   <title>Kontakt | dezynsekcja-poznan.pl</title>
   <meta name="description" content="Kontakt z dezynsekcja-poznan.pl. Formularz online - zostaw numer, oddzwonimy w 15 minut. Dojazd w 2h w Poznaniu.">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    /* Dopasowanie iframe Google Forms do ciemnej kolorystyki strony */
+    .form-embed {
+      position: relative;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 18px;
+      background: radial-gradient(circle at 20% 20%, rgba(128, 90, 213, 0.12), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 30%),
+                  var(--background-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+    .form-embed iframe {
+      display: block;
+      width: 100%;
+      height: 1150px;
+      border: 0;
+      margin: 0;
+      /* Przyciemnia jasny motyw formularza, aby lepiej pasował do tła */
+      filter: invert(1) hue-rotate(180deg) saturate(1.05) brightness(0.94);
+      background: #0b1220;
+    }
+  </style>
 
   <!-- GA4 TRACKING (replace with your actual measurement ID) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -24,15 +51,15 @@
   <header><div class="container navbar"><a class="brand" href="/"><span class="dot"></span><span>Dezynsekcja Poznań</span></a><nav class="nav-links"><a href="/dezynsekcja-poznan">Dezynsekcja</a><a href="/deratyzacja-poznan">Deratyzacja</a><a href="/dezynfekcja-poznan">Dezynfekcja</a><a href="/ozonowanie-poznan">Ozonowanie</a><a href="/cennik">Cennik</a><a href="/opinie">Opinie</a><a href="/kontakt" class="cta-btn">Zostaw numer</a></nav></div></header>
   <main class="container">
     <section class="hero-mini">
-      <h1>� Zostaw numer — oddzwonimy w 15 minut</h1>
+      <h1>📝 Zostaw numer — oddzwonimy w 15 minut</h1>
       <p style="font-size: 17px; margin-top: 12px;">Nie czekaj — każdy dzień to +40% populacji insektów. Wypełnij formularz poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
     </section>
 
     <section class="section">
       <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
-      <div style="position: relative; width: 100%; max-width: 640px; margin: 0 auto; background: var(--background-secondary); border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/viewform?embedded=true" width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/viewform?embedded=true" marginheight="0" marginwidth="0">Ładuję…</iframe>
       </div>
       <div class="highlight" style="margin-top: 16px;">
         💡 <strong>Porada:</strong> Oddzwonimy w ciągu 15 minut i ustalimy szczegóły interwencji.
