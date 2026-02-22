@@ -144,14 +144,16 @@ git push -u origin main
 
 ### GA4 Analytics Setup
 1. Create GA4 property at https://analytics.google.com
-2. Get **Measurement ID** (format: `G-XXXXXXXXXX`)
-3. Replace placeholder in all HTML files:
+2. Measurement ID configured site-wide: `G-0ZBK4P27Z1`
+3. Tracking snippet użyty w każdej stronie:
    ```html
-   <!-- Before -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-   
-   <!-- After (example) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZBK4P27Z1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-0ZBK4P27Z1');
+   </script>
    ```
 
 ### Phone Number Configuration
