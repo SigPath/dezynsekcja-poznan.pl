@@ -60,7 +60,7 @@
     <section class="section">
       <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
-      <form id="contact-form" class="contact-card" action="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/formResponse" method="POST" target="hidden_iframe">
+      <form id="contact-form" class="contact-card" action="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/formResponse" method="POST">
         <div class="contact-grid">
           <label class="contact-label" for="name">Imię i nazwisko *</label>
           <input class="contact-input" id="name" name="entry.1604605425" type="text" required autocomplete="name" placeholder="Jan Kowalski">
@@ -90,7 +90,6 @@
           <p class="contact-hint">Oddzwonimy w ciągu 15 minut (godz. 7–22). Dane trafiają do Google Forms → Google Sheets.</p>
         </div>
       </form>
-      <iframe name="hidden_iframe" style="display:none;"></iframe>
       <div class="highlight" style="margin-top: 16px;">
         💡 <strong>Porada:</strong> Oddzwonimy w ciągu 15 minut i ustalimy szczegóły interwencji.
       </div>
@@ -152,35 +151,36 @@
       const form = document.getElementById('contact-form');
       const statusEl = document.getElementById('status');
       if (!form) return;
-      const iframe = document.getElementsByName('hidden_iframe')[0];
       const submitBtn = form.querySelector('button[type="submit"]');
-      let submitting = false;
-      let failTimer;
 
-      form.addEventListener('submit', () => {
-        submitting = true;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         statusEl.textContent = 'Wysyłanie…';
         statusEl.style.color = 'var(--muted)';
         if (submitBtn) submitBtn.disabled = true;
-        clearTimeout(failTimer);
-        failTimer = setTimeout(() => {
-          if (!submitting) return;
-          submitting = false;
+
+        const formData = new FormData(form);
+        const body = new URLSearchParams();
+        for (const [key, value] of formData.entries()) {
+          body.append(key, value);
+        }
+
+        try {
+          await fetch(form.action, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+            body,
+          });
+          statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
+          statusEl.style.color = 'var(--primary)';
+          form.reset();
+        } catch (err) {
           statusEl.textContent = '❌ Nie udało się wysłać. Spróbuj ponownie.';
           statusEl.style.color = '#f87171';
+        } finally {
           if (submitBtn) submitBtn.disabled = false;
-        }, 8000);
-      });
-
-      iframe.addEventListener('load', () => {
-        // Ignore first load (no submit yet)
-        if (!submitting) return;
-        submitting = false;
-        clearTimeout(failTimer);
-        statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
-        statusEl.style.color = 'var(--primary)';
-        form.reset();
-        if (submitBtn) submitBtn.disabled = false;
+        }
       });
     })();
   </script>
