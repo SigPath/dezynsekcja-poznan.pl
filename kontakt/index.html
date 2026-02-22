@@ -60,16 +60,16 @@
     <section class="section">
       <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
-      <form id="contact-form" class="contact-card">
+      <form id="contact-form" class="contact-card" action="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/formResponse" method="POST" target="hidden_iframe">
         <div class="contact-grid">
           <label class="contact-label" for="name">Imię i nazwisko *</label>
-          <input class="contact-input" id="name" name="name" type="text" required autocomplete="name" placeholder="Jan Kowalski">
+          <input class="contact-input" id="name" name="entry.1604605425" type="text" required autocomplete="name" placeholder="Jan Kowalski">
 
           <label class="contact-label" for="phone">Telefon *</label>
-          <input class="contact-input" id="phone" name="phone" type="tel" required inputmode="tel" placeholder="600 000 000">
+          <input class="contact-input" id="phone" name="entry.1385428490" type="tel" required inputmode="tel" placeholder="600 000 000">
 
           <label class="contact-label" for="problem">Problem (co się dzieje?) *</label>
-          <select class="contact-select" id="problem" name="problem" required>
+          <select class="contact-select" id="problem" name="entry.131674857" required>
             <option value="" disabled selected>Wybierz</option>
             <option>Pluskwy w łóżku/meblach</option>
             <option>Karaluchy / prusaki</option>
@@ -81,7 +81,7 @@
           </select>
 
           <label class="contact-label" for="details">Dodatkowe info (opcjonalnie)</label>
-          <textarea class="contact-textarea" id="details" name="details" placeholder="Metraż, lokalizacja gniazda, kiedy zauważono problem…"></textarea>
+          <textarea class="contact-textarea" id="details" name="entry.681572499" placeholder="Metraż, lokalizacja gniazda, kiedy zauważono problem…"></textarea>
 
           <div class="contact-actions">
             <button type="submit" class="cta-btn">Wyślij</button>
@@ -90,6 +90,7 @@
           <p class="contact-hint">Oddzwonimy w ciągu 15 minut (godz. 7–22). Dane trafiają do Google Forms → Google Sheets.</p>
         </div>
       </form>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
       <div class="highlight" style="margin-top: 16px;">
         💡 <strong>Porada:</strong> Oddzwonimy w ciągu 15 minut i ustalimy szczegóły interwencji.
       </div>
@@ -151,43 +152,19 @@
       const form = document.getElementById('contact-form');
       const statusEl = document.getElementById('status');
       if (!form) return;
+      const iframe = document.getElementsByName('hidden_iframe')[0];
 
-      const workerEndpoint = 'https://YOUR_WORKER_DOMAIN.workers.dev/submit'; // TODO: podmień na swój endpoint
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+      form.addEventListener('submit', () => {
         statusEl.textContent = 'Wysyłanie…';
         statusEl.style.color = 'var(--muted)';
+      });
 
-        const payload = {
-          name: form.name.value.trim(),
-          phone: form.phone.value.trim(),
-          problem: form.problem.value,
-          details: form.details.value.trim(),
-        };
-
-        if (!payload.name || !payload.phone || !payload.problem) {
-          statusEl.textContent = 'Uzupełnij wymagane pola.';
-          statusEl.style.color = 'var(--primary)';
-          return;
-        }
-
-        try {
-          const res = await fetch(workerEndpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-
-          if (!res.ok) throw new Error('Błąd sieci');
-
-          statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
-          statusEl.style.color = 'var(--primary)';
-          form.reset();
-        } catch (err) {
-          statusEl.textContent = '❌ Nie udało się wysłać. Spróbuj ponownie.';
-          statusEl.style.color = '#f87171';
-        }
+      iframe.addEventListener('load', () => {
+        // Google Forms loads a response page into the hidden iframe; treat as success
+        if (!form.name.value && !form.phone.value) return; // skip initial empty load
+        statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
+        statusEl.style.color = 'var(--primary)';
+        form.reset();
       });
     })();
   </script>
