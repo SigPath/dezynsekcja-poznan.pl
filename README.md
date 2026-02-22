@@ -144,15 +144,15 @@ git push -u origin main
 
 ### GA4 Analytics Setup
 1. Create GA4 property at https://analytics.google.com
-2. Measurement ID configured site-wide: `G-0ZBK4P27Z1`
+2. Measurement ID configured site-wide: `G-9TXW6PM1CP`
 3. Tracking snippet użyty w każdej stronie:
    ```html
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZBK4P27Z1"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TXW6PM1CP"></script>
    <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
-     gtag('config', 'G-0ZBK4P27Z1');
+     gtag('config', 'G-9TXW6PM1CP');
    </script>
    ```
 
