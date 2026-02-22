@@ -153,18 +153,34 @@
       const statusEl = document.getElementById('status');
       if (!form) return;
       const iframe = document.getElementsByName('hidden_iframe')[0];
+      const submitBtn = form.querySelector('button[type="submit"]');
+      let submitting = false;
+      let failTimer;
 
       form.addEventListener('submit', () => {
+        submitting = true;
         statusEl.textContent = 'Wysyłanie…';
         statusEl.style.color = 'var(--muted)';
+        if (submitBtn) submitBtn.disabled = true;
+        clearTimeout(failTimer);
+        failTimer = setTimeout(() => {
+          if (!submitting) return;
+          submitting = false;
+          statusEl.textContent = '❌ Nie udało się wysłać. Spróbuj ponownie.';
+          statusEl.style.color = '#f87171';
+          if (submitBtn) submitBtn.disabled = false;
+        }, 8000);
       });
 
       iframe.addEventListener('load', () => {
-        // Google Forms loads a response page into the hidden iframe; treat as success
-        if (!form.name.value && !form.phone.value) return; // skip initial empty load
+        // Ignore first load (no submit yet)
+        if (!submitting) return;
+        submitting = false;
+        clearTimeout(failTimer);
         statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
         statusEl.style.color = 'var(--primary)';
         form.reset();
+        if (submitBtn) submitBtn.disabled = false;
       });
     })();
   </script>
