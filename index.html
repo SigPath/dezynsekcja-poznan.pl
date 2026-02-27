@@ -11,18 +11,21 @@
   <meta property="og:type" content="business.business">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dezynsekcja-poznan.pl/">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
 
-  <!-- GA4 TRACKING (replace with your actual measurement ID) -->
+  <!-- GA4 TRACKING -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZBK4P27Z1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-0ZBK4P27Z1');
-    gtag('config', 'AW-1050890924');// Replace with your GA4 property ID
+    gtag('config', 'AW-1050890924');
   </script>
 
   <!-- LOCAL BUSINESS SCHEMA -->
@@ -85,7 +88,7 @@
         "description": "Oprysk i zamgławianie ULV dla eliminacji patogenów"
       },
       {
-        "@type": "Service",
+        "@type": " सर्विस ",
         "name": "Ozonowanie",
         "description": "Ozonowanie pomieszczeń - eliminacja zapachów, bakterii, wirusów, pleśni, alergenów"
       }
@@ -93,12 +96,17 @@
   }
   </script>
 </head>
-<body>
-  <header>
+<body class="theme-dark">
+  <div class="blob-bg blob-1"></div>
+  <div class="blob-bg blob-2"></div>
+
+  <header class="glass-header">
     <div class="container navbar">
       <a class="brand" href="/">
-        <span class="dot"></span>
-        <span>Dezynsekcja Poznań</span>
+        <div class="brand-icon-wrapper">
+          <span class="pulse-dot"></span>
+        </div>
+        <span class="brand-text">Dezynsekcja Poznań</span>
       </a>
       <nav class="nav-links">
         <a href="/dezynsekcja-poznan">Dezynsekcja</a>
@@ -107,252 +115,426 @@
         <a href="/ozonowanie-poznan">Ozonowanie</a>
         <a href="/cennik">Cennik</a>
         <a href="/opinie">Opinie</a>
-        <a href="/kontakt" class="cta-btn">Zamów wycenę</a>
       </nav>
+      <div class="nav-actions">
+         <a href="/kontakt" class="btn btn-primary cta-btn">Zamów wycenę</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <div class="badges">
-          <span class="badge">⏱️ Dojazd 2h</span>
-          <span class="badge">✓ 100% Gwarancji</span>
-          <span class="badge">🔒 Dyskrecja</span>
+  <main>
+    <section class="hero-section container">
+      <div class="hero-content">
+        <div class="badges-group">
+          <span class="badge badge-outline">⏱️ Dojazd 2h</span>
+          <span class="badge badge-success">✓ 100% Gwarancji</span>
+          <span class="badge badge-glass">🔒 Dyskrecja</span>
         </div>
-        <h1 style="font-size: clamp(32px, 5vw, 48px); line-height: 1.1;">Masz problem z robakami? <br><span style="color: var(--primary);">Jesteśmy u Ciebie w 2 godziny.</span></h1>
         
-        <ul style="margin: 24px 0; list-style: none; display: grid; gap: 12px; color: var(--text-secondary); font-size: 16px;">
-          <li style="display: flex; gap: 10px; align-items: center;"><span style="color: var(--success); font-weight: bold;">✓</span> <span><strong>Skuteczna dezynsekcja</strong> (pluskwy, karaluchy, osy)</span></li>
-          <li style="display: flex; gap: 10px; align-items: center;"><span style="color: var(--success); font-weight: bold;">✓</span> <span><strong>Dyskrecja</strong> (nieoznakowane auto, wyglądamy jak hydraulik)</span></li>
-          <li style="display: flex; gap: 10px; align-items: center;"><span style="color: var(--success); font-weight: bold;">✓</span> <span><strong>Bezpieczne środki</strong> (dla dzieci i zwierząt po 2h)</span></li>
+        <h1 class="hero-title">
+          Masz problem z robakami?
+          <span class="text-gradient d-block">Jesteśmy u Ciebie w 2 godziny.</span>
+        </h1>
+        
+        <ul class="hero-list">
+          <li><strong>Skuteczna dezynsekcja</strong> (pluskwy, karaluchy, osy)</li>
+          <li><strong>Dyskrecja</strong> (nieoznakowane auto, wyglądamy jak hydraulik)</li>
+          <li><strong>Bezpieczne środki</strong> (dla dzieci i zwierząt po 2h)</li>
         </ul>
-        <div class="contact-actions" style="margin: 32px 0 28px; flex-direction: column; align-items: flex-start;">
-          <a class="cta-btn" href="/kontakt" style="font-size: 20px; padding: 18px 32px; width: 100%; max-width: 400px; text-align: center; justify-content: center;">
+        
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg shine-effect" href="/kontakt">
             📝 Wypełnij formularz (odpisujemy 24/7)
           </a>
         </div>
-        <div class="hero-metrics">
-          <div class="metric"><strong>300+</strong><span>Opinii Google 4.9★</span></div>
-          <div class="metric"><strong>1240</strong><span>Uratowanych mieszkań</span></div>
-          <div class="metric"><strong>30 DNI</strong><span>Gwarancja usuwania</span></div>
+        
+        <div class="trust-bar display-flex gap-4">
+          <div class="trust-metric">
+            <span class="trust-value">300+</span>
+            <span class="trust-label">Opinii Google 4.9★</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-metric">
+            <span class="trust-value">1240</span>
+            <span class="trust-label">Uratowanych mieszkań</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-metric">
+            <span class="trust-value">30 DNI</span>
+            <span class="trust-label">Gwarancja usuwania</span>
+          </div>
         </div>
       </div>
-      <div class="hero-card" style="align-self: center;">
-        <h3 style="margin-bottom: 20px;">Co Cię gryzie? Wybierz i usuń to:</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <a href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan" style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: all 0.2s;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🪳</div>
-            <strong>Pluskwy</strong><br><span style="font-size: 13px; color: var(--muted);">W łóżku?</span>
-          </a>
-          <a href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan" style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: all 0.2s;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🦗</div>
-            <strong>Karaluchy</strong><br><span style="font-size: 13px; color: var(--muted);">W kuchni?</span>
-          </a>
-          <a href="/dezynsekcja-poznan/osy-szerszenie-poznan" style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: all 0.2s;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🐝</div>
-            <strong>Osy</strong><br><span style="font-size: 13px; color: var(--muted);">Gniazdo?</span>
-          </a>
-          <a href="/deratyzacja-poznan" style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: all 0.2s;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🐭</div>
-            <strong>Szczury</strong><br><span style="font-size: 13px; color: var(--muted);">W piwnicy?</span>
-          </a>
+
+      <div class="hero-interactive">
+        <div class="bento-wrapper glass-panel shadow-premium">
+          <div class="bento-header">
+            <h3>Co Cię gryzie? Wybierz i usuń to:</h3>
+          </div>
+          <div class="bento-grid-2x2">
+            <a href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan" class="bento-box box-hover">
+              <div class="box-icon">🪳</div>
+              <div class="box-content">
+                <strong>Pluskwy</strong>
+                <span>W łóżku?</span>
+              </div>
+            </a>
+            <a href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan" class="bento-box box-hover">
+              <div class="box-icon">🦗</div>
+              <div class="box-content">
+                <strong>Karaluchy</strong>
+                <span>W kuchni?</span>
+              </div>
+            </a>
+            <a href="/dezynsekcja-poznan/osy-szerszenie-poznan" class="bento-box box-hover">
+              <div class="box-icon">🐝</div>
+              <div class="box-content">
+                <strong>Osy</strong>
+                <span>Gniazdo?</span>
+              </div>
+            </a>
+            <a href="/deratyzacja-poznan" class="bento-box box-hover">
+              <div class="box-icon">🐭</div>
+              <div class="box-content">
+                <strong>Szczury</strong>
+                <span>W piwnicy?</span>
+              </div>
+            </a>
+          </div>
+          <div class="bento-footer">
+            <p>Nie wiesz co to? <a href="/kontakt" class="link-glow">Wyślij nam zdjęcie →</a></p>
+          </div>
         </div>
-        <p style="margin-top: 16px; font-size: 13px; color: var(--muted); text-align: center;">Nie wiesz co to? <a href="/kontakt" style="text-decoration: underline;">Wyślij nam zdjęcie →</a></p>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Jak działamy? - 3 proste kroki</h2>
-      <p class="lead">Od formularza do gwarancji w 30 dni. Przejrzysty proces, bez niespodzianek.</p>
-      <div class="cards">
-        <div class="card">
-          <div style="text-align: center; font-size: 48px; margin-bottom: 12px;">📝</div>
-          <h3>Krok 1: Wypełnij (60 sekund)</h3>
+    <section class="process-section container section-padding">
+      <div class="section-heading text-center">
+        <h2>Jak działamy? - 3 proste kroki</h2>
+        <p class="lead-text">Od formularza do gwarancji w 30 dni. Przejrzysty proces, bez niespodzianek.</p>
+      </div>
+      
+      <div class="process-track">
+        <div class="process-step glass-card">
+          <div class="step-icon">📝</div>
+          <div class="step-number">Krok 1</div>
+          <h3>Wypełnij (60 sekund)</h3>
           <p>Wypełnij formularz kontaktowy. Podaj co się dzieje i gdzie. Odpiszemy w ciągu kliku minut z ceną.</p>
         </div>
-        <div class="card">
-          <div style="text-align: center; font-size: 48px; margin-bottom: 12px;">🚗</div>
-          <h3>Krok 2: Wizyta (120 min max)</h3>
+        <div class="process-connector"></div>
+        <div class="process-step glass-card highlight-step">
+          <div class="step-icon pulse-soft">🚗</div>
+          <div class="step-number">Krok 2</div>
+          <h3>Wizyta (120 min max)</h3>
           <p>Przyjeżdżamy w 2h w granicach Poznania (24/7). Profesjonalny zabieg, instrukcja bezpieczeństwa, raport PDF. Druga wizyta po 10–14 dniach.</p>
         </div>
-        <div class="card">
-          <div style="text-align: center; font-size: 48px; margin-bottom: 12px;">✅</div>
-          <h3>Krok 3: Gwarancja (30 dni)</h3>
+        <div class="process-connector"></div>
+        <div class="process-step glass-card">
+          <div class="step-icon">✅</div>
+          <div class="step-number">Krok 3</div>
+          <h3>Gwarancja (30 dni)</h3>
           <p>Powrót gratis jeśli problem wrócił w 30 dni. Kontrola telefoniczna +24h. Raporty dla sanepidu/wspólnoty na życzenie.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Usługi dezynsekcji i deratyzacji</h2>
-      <p class="lead">Obsługujemy mieszkania, domy, wspólnoty, gastronomię, magazyny, hotele i biura. Każdy zabieg dokumentujemy i udostępniamy instrukcję bezpieczeństwa.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>🪳 Pluskwy</h3>
-          <p>Zamgławianie ULV + preparat rezydualny, rotacja substancji, powrót gratis w 30 dni.</p>
-          <a class="cta-btn" href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan">Sprawdź szczegóły</a>
-        </div>
-        <div class="card">
-          <h3>🦗 Karaluchy i prusaki</h3>
-          <p>Żelowanie kuchni i pionów, oprysk punktowy, kontrola po 14 dniach.</p>
-          <a class="cta-btn" href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan">Zamów wizytę</a>
-        </div>
-        <div class="card">
-          <h3>🐜 Mrówki (w tym faraona)</h3>
-          <p>Żele IGR i bariery kontaktowe, instrukcja dla mieszkańców, kontrola po 10–14 dniach.</p>
-          <a class="cta-btn" href="/dezynsekcja-poznan/mrowki-poznan">Zobacz ofertę</a>
-        </div>
-        <div class="card">
-          <h3>🐝 Osy i szerszenie</h3>
-          <p>Usuwanie gniazd na strychach, balkonach i w attyce, zabezpieczenia wlotów.</p>
-          <a class="cta-btn" href="/dezynsekcja-poznan/osy-szerszenie-poznan">Zgłoś gniazdo</a>
-        </div>
-        <div class="card">
-          <h3>🐭 Deratyzacja</h3>
-          <p>Monitoring gryzoni, karmniki deratyzacyjne, dokumentacja HACCP, proofing.</p>
-          <a class="cta-btn" href="/deratyzacja-poznan">Poznaj plan</a>
-        </div>
-        <div class="card">
-          <h3>🧼 Dezynfekcja</h3>
-          <p>Oprysk, zamgławianie ULV, ozonowanie dodatkowe; mieszkania, biura, placówki.</p>
-          <a class="cta-btn" href="/dezynfekcja-poznan">Zamów dezynfekcję</a>
-        </div>
-        <div class="card">
-          <h3>💨 Ozonowanie</h3>
-          <p>Ozonowanie pomieszczeń - eliminacja zapachów, bakterii, wirusów, pleśni, alergenów.</p>
-          <a class="cta-btn" href="/ozonowanie-poznan">Zamów ozonowanie</a>
-        </div>
-        <div class="card">
-          <h3>👃 Zwalczanie zapachów</h3>
-          <p>Neutralizacja zapachu moczu, zniszczenia, rozłoża - nie maskujemy, usuwamy przyczyny.</p>
-          <a class="cta-btn" href="/zwalczanie-zapachow-poznan">Rozwiąż problem</a>
-        </div>
+    <section class="services-bento container section-padding pt-0">
+      <div class="section-heading">
+        <h2>Usługi dezynsekcji i deratyzacji</h2>
+        <p class="lead-text">Obsługujemy mieszkania, domy, wspólnoty, gastronomię, magazyny, hotele i biura. Każdy zabieg dokumentujemy i udostępniamy instrukcję bezpieczeństwa.</p>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>SLA i gwarancja</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Czas reakcji</h3>
-          <p>Potwierdzenie zgłoszenia w kilka minut online. Wyjazd w 120 minut w granicach Poznania. Po 22:00 - tryb nocny.</p>
-          <div class="tag-grid">
-            <span class="tag">24/7 Formularz</span>
-            <span class="tag">Szybki kontakt SMS</span>
-            <span class="tag">Dojazd 2h</span>
+      
+      <!-- Asymetryczny Bento Grid UI -->
+      <div class="modern-bento-grid">
+        <div class="bento-item span-2-col bento-featured">
+          <div class="item-content">
+            <div class="item-icon-xl">🪳</div>
+            <h3>Pluskwy</h3>
+            <p>Zamgławianie ULV + preparat rezydualny, rotacja substancji, powrót gratis w 30 dni.</p>
+            <a class="btn btn-primary sm-btn mt-auto" href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan">Sprawdź szczegóły</a>
           </div>
         </div>
-        <div class="card">
-          <h3>Gwarancja i follow-up</h3>
-          <p>Gwarancja 30 dni na pluskwy i karaluchy; darmowy powrót jeśli problem wróci. Kontrola telefoniczna po 24h.</p>
-          <div class="tag-grid">
-            <span class="tag">Powrót gratis</span>
-            <span class="tag">Checklista</span>
-            <span class="tag">Raport PDF</span>
+        
+        <div class="bento-item">
+           <div class="item-content">
+             <div class="item-icon">🦗</div>
+             <h3>Karaluchy i prusaki</h3>
+             <p>Żelowanie kuchni i pionów, oprysk punktowy, kontrola po 14 dniach.</p>
+             <a class="btn btn-ghost sm-btn mt-auto" href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan">Zamów wizytę</a>
+           </div>
+        </div>
+
+        <div class="bento-item">
+          <div class="item-content">
+            <div class="item-icon">🐭</div>
+            <h3>Deratyzacja</h3>
+            <p>Monitoring gryzoni, karmniki deratyzacyjne, dokumentacja HACCP, proofing.</p>
+            <a class="btn btn-ghost sm-btn mt-auto" href="/deratyzacja-poznan">Poznaj plan</a>
+          </div>
+        </div>
+        
+        <div class="bento-item span-3-col bento-row row-flex">
+          <div class="row-flex-item">
+            <div class="item-icon">🐜</div>
+            <div>
+              <h3>Mrówki (w tym faraona)</h3>
+              <p>Żele IGR i bariery kontaktowe, instrukcja dla mieszkańców, kontrola po 10–14 dniach.</p>
+              <a class="link-arrow" href="/dezynsekcja-poznan/mrowki-poznan">Zobacz ofertę →</a>
+            </div>
+          </div>
+          <div class="row-divider"></div>
+          <div class="row-flex-item">
+            <div class="item-icon">🐝</div>
+            <div>
+              <h3>Osy i szerszenie</h3>
+              <p>Usuwanie gniazd na strychach, balkonach i w attyce, zabezpieczenia wlotów.</p>
+              <a class="link-arrow" href="/dezynsekcja-poznan/osy-szerszenie-poznan">Zgłoś gniazdo →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-item">
+           <div class="item-content">
+             <div class="item-icon">🧼</div>
+             <h3>Dezynfekcja</h3>
+             <p>Oprysk, zamgławianie ULV, ozonowanie dodatkowe; mieszkania, biura, placówki.</p>
+             <a class="btn btn-ghost sm-btn mt-auto" href="/dezynfekcja-poznan">Zamów dezynfekcję</a>
+           </div>
+        </div>
+
+        <div class="bento-item">
+           <div class="item-content">
+             <div class="item-icon">💨</div>
+             <h3>Ozonowanie</h3>
+             <p>Ozonowanie pomieszczeń - eliminacja zapachów, bakterii, wirusów, pleśni, alergenów.</p>
+             <a class="btn btn-ghost sm-btn mt-auto" href="/ozonowanie-poznan">Zamów ozonowanie</a>
+           </div>
+        </div>
+
+        <div class="bento-item">
+           <div class="item-content">
+             <div class="item-icon">👃</div>
+             <h3>Zwalczanie zapachów</h3>
+             <p>Neutralizacja zapachu moczu, zniszczenia, rozłoża - nie maskujemy, usuwamy przyczyny.</p>
+             <a class="btn btn-ghost sm-btn mt-auto" href="/zwalczanie-zapachow-poznan">Rozwiąż problem</a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-features container section-padding pt-0">
+      <h2 class="sr-only">SLA i gwarancja</h2>
+      <div class="feature-split glass-panel shadow-premium">
+        <div class="feature-col border-right">
+          <div class="feature-header">
+            <div class="f-icon">⚡</div>
+            <h3>Czas reakcji</h3>
+          </div>
+          <p class="color-muted">Potwierdzenie zgłoszenia w kilka minut online. Wyjazd w 120 minut w granicach Poznania. Po 22:00 - tryb nocny.</p>
+          <div class="feature-tags">
+            <span class="modern-tag">24/7 Formularz</span>
+            <span class="modern-tag">Szybki kontakt SMS</span>
+            <span class="modern-tag">Dojazd 2h</span>
+          </div>
+        </div>
+        <div class="feature-col">
+          <div class="feature-header">
+            <div class="f-icon">🛡️</div>
+            <h3>Gwarancja i follow-up</h3>
+          </div>
+          <p class="color-muted">Gwarancja 30 dni na pluskwy i karaluchy; darmowy powrót jeśli problem wróci. Kontrola telefoniczna po 24h.</p>
+          <div class="feature-tags">
+            <span class="modern-tag">Powrót gratis</span>
+            <span class="modern-tag">Checklista</span>
+            <span class="modern-tag">Raport PDF</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Cennik skrócony</h2>
-      <table class="table">
-        <thead><tr><th>Usługa</th><th>Cena</th><th>Zawiera</th></tr></thead>
-        <tbody>
-          <tr><td>Pluskwy - mieszkanie</td><td>650–900 zł</td><td>Oprysk + ULV, dwie wizyty, gwarancja 30 dni</td></tr>
-          <tr><td>Karaluchy / prusaki</td><td>450–650 zł</td><td>Żelowanie + oprysk punktowy, kontrola po 14 dniach</td></tr>
-          <tr><td>Osy / szerszenie</td><td>350–500 zł</td><td>Usunięcie gniazda, zabezpieczenie wlotu</td></tr>
-          <tr><td>Deratyzacja interwencyjna</td><td>450–700 zł</td><td>Stacje deratyzacyjne, karmniki, raport dla sanepidu</td></tr>
-          <tr><td>Dezynfekcja</td><td>od 400 zł</td><td>Oprysk + ULV, zalecenia bezpieczeństwa</td></tr>
-        </tbody>
-      </table>
-      <p class="lead" style="margin-top: 10px;">Dokładne widełki na stronie cennik. Dopłata nocna +100 zł po 22:00.</p>
-      <a class="cta-btn" href="/cennik">Pełny cennik</a>
+    <section class="pricing-list-section container section-padding pt-0">
+      <div class="section-heading flex-between">
+        <div>
+          <h2>Cennik skrócony</h2>
+          <p class="lead-text" style="max-width: 500px">Dokładne widełki na stronie cennik. Dopłata nocna +100 zł po 22:00.</p>
+        </div>
+        <a class="btn btn-outline d-none-mobile" href="/cennik">Pełny cennik <span class="arrow">→</span></a>
+      </div>
+      
+      <!-- App-like Data List -->
+      <div class="spec-list glass-card">
+        <div class="spec-row spec-header">
+          <div class="spec-col name">Usługa</div>
+          <div class="spec-col desc">Zawiera</div>
+          <div class="spec-col price text-right">Cena</div>
+        </div>
+        
+        <div class="spec-row">
+          <div class="spec-col name font-medium">Pluskwy - mieszkanie</div>
+          <div class="spec-col desc color-muted">Oprysk + ULV, dwie wizyty, gwarancja 30 dni</div>
+          <div class="spec-col price badge-price">650–900 zł</div>
+        </div>
+        
+        <div class="spec-row">
+          <div class="spec-col name font-medium">Karaluchy / prusaki</div>
+          <div class="spec-col desc color-muted">Żelowanie + oprysk punktowy, kontrola po 14 dniach</div>
+          <div class="spec-col price badge-price">450–650 zł</div>
+        </div>
+        
+        <div class="spec-row">
+          <div class="spec-col name font-medium">Osy / szerszenie</div>
+          <div class="spec-col desc color-muted">Usunięcie gniazda, zabezpieczenie wlotu</div>
+          <div class="spec-col price badge-price">350–500 zł</div>
+        </div>
+        
+        <div class="spec-row">
+          <div class="spec-col name font-medium">Deratyzacja interwencyjna</div>
+          <div class="spec-col desc color-muted">Stacje deratyzacyjne, karmniki, raport dla sanepidu</div>
+          <div class="spec-col price badge-price">450–700 zł</div>
+        </div>
+        
+        <div class="spec-row">
+          <div class="spec-col name font-medium">Dezynfekcja</div>
+          <div class="spec-col desc color-muted">Oprysk + ULV, zalecenia bezpieczeństwa</div>
+          <div class="spec-col price badge-price">od 400 zł</div>
+        </div>
+      </div>
+      <div class="mt-4 text-center d-block-mobile" style="display: none;">
+        <a class="btn btn-outline full-width" href="/cennik">Pełny cennik →</a>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Dowód społeczny</h2>
-      <p class="lead">Realne opinie klientów z Poznania. Cel 300 opinii Google w 12 miesięcy.</p>
-      <div class="testimonials">
-        <div class="testimonial">
-          <div class="name">Marta, Rataje</div>
-          <div class="meta">Pluskwy - 2 wizyty</div>
-          <p>Przyjechali w 90 minut, dokładna instrukcja przygotowania, po drugiej wizycie zero śladów.</p>
+    <section class="social-proof container section-padding pt-0">
+      <div class="section-heading text-center">
+        <h2>Dowód społeczny</h2>
+        <p class="lead-text mx-auto">Realne opinie klientów z Poznania. Cel 300 opinii Google w 12 miesięcy.</p>
+      </div>
+      
+      <div class="review-grid">
+        <div class="review-card glass-panel shadow-sm hover-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Przyjechali w 90 minut, dokładna instrukcja przygotowania, po drugiej wizycie zero śladów."</p>
+          <div class="review-author">
+             <div class="avatar initial">M</div>
+             <div class="author-details">
+               <span class="name">Marta, Rataje</span>
+               <span class="meta color-muted">Pluskwy - 2 wizyty</span>
+             </div>
+          </div>
         </div>
-        <div class="testimonial">
-          <div class="name">Bartek, Jeżyce</div>
-          <div class="meta">Karaluchy w kuchni</div>
-          <p>Żelowanie kuchni, kontrola po 2 tygodniach. Zniknęły, dostałem raport dla wspólnoty.</p>
+        
+        <div class="review-card glass-panel shadow-sm hover-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Żelowanie kuchni, kontrola po 2 tygodniach. Zniknęły, dostałem raport dla wspólnoty."</p>
+          <div class="review-author">
+             <div class="avatar initial">B</div>
+             <div class="author-details">
+               <span class="name">Bartek, Jeżyce</span>
+               <span class="meta color-muted">Karaluchy w kuchni</span>
+             </div>
+          </div>
         </div>
-        <div class="testimonial">
-          <div class="name">Restauracja Grunwald</div>
-          <div class="meta">Kontrakt B2B</div>
-          <p>Miesięczne przeglądy, raporty HACCP, szybkie reakcje na zgłoszenia nocne.</p>
+        
+        <div class="review-card glass-panel shadow-sm hover-up">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Miesięczne przeglądy, raporty HACCP, szybkie reakcje na zgłoszenia nocne."</p>
+          <div class="review-author">
+             <div class="avatar icon-bg">🏛️</div>
+             <div class="author-details">
+               <span class="name">Restauracja Grunwald</span>
+               <span class="meta color-muted">Kontrakt B2B</span>
+             </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Najczęstsze pytania</h2>
-      <div class="grid-2">
-        <div class="faq-item"><h4>Ile trwa zabieg na pluskwy?</h4><p>Średnio 60–90 minut w mieszkaniu 40–60 m². Drugie podejście po 10–14 dniach.</p></div>
-        <div class="faq-item"><h4>Czy muszę opuszczać mieszkanie?</h4><p>Tak, 3–4 godziny po oprysku. Instrukcja zostaje na miejscu i na mailu.</p></div>
-        <div class="faq-item"><h4>Czy środki są bezpieczne dla dzieci/zwierząt?</h4><p>Stosujemy preparaty dopuszczone do użytku profesjonalnego. Po wietrzeniu i sprzątaniu powierzchni kontaktowych wracasz bezpiecznie.</p></div>
-        <div class="faq-item"><h4>Jak zbieracie opinie?</h4><p>Po wizycie wysyłamy SMS/WhatsApp z linkiem do Google. Cel 25–35 opinii miesięcznie.</p></div>
+    <section class="faq-section container section-padding pt-0">
+      <div class="section-heading mb-4">
+        <h2>Najczęstsze pytania</h2>
+      </div>
+      <div class="accordion-grid">
+        <div class="accordion-item glass-card">
+          <h4 class="accordion-trigger">Ile trwa zabieg na pluskwy?</h4>
+          <div class="accordion-content">
+            <p>Średnio 60–90 minut w mieszkaniu 40–60 m². Drugie podejście po 10–14 dniach.</p>
+          </div>
+        </div>
+        <div class="accordion-item glass-card">
+          <h4 class="accordion-trigger">Czy muszę opuszczać mieszkanie?</h4>
+          <div class="accordion-content">
+            <p>Tak, 3–4 godziny po oprysku. Instrukcja zostaje na miejscu i na mailu.</p>
+          </div>
+        </div>
+        <div class="accordion-item glass-card">
+          <h4 class="accordion-trigger">Czy środki są bezpieczne dla dzieci/zwierząt?</h4>
+          <div class="accordion-content">
+            <p>Stosujemy preparaty dopuszczone do użytku profesjonalnego. Po wietrzeniu i sprzątaniu powierzchni kontaktowych wracasz bezpiecznie.</p>
+          </div>
+        </div>
+        <div class="accordion-item glass-card">
+          <h4 class="accordion-trigger">Jak zbieracie opinie?</h4>
+          <div class="accordion-content">
+            <p>Po wizycie wysyłamy SMS/WhatsApp z linkiem do Google. Cel 25–35 opinii miesięcznie.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-top">
-      <div>
-        <h4>🚨 Dezynsekcja Poznań 24/7</h4>
-        <p style="margin-top: 12px;"><a href="/kontakt" style="font-weight: 700; color: var(--primary);">📝 Wypełnij formularz kontaktowy</a></p>
+  <footer class="modern-footer border-top">
+    <div class="container pb-4 pt-5">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <h4 class="footer-logo">🚨 Dezynsekcja Poznań 24/7</h4>
+          <p class="mt-3"><a href="/kontakt" class="footer-cta-link text-primary bold">📝 Wypełnij formularz kontaktowy</a></p>
+        </div>
         
+        <div class="footer-links-col">
+          <h4>Usługi</h4>
+          <ul>
+            <li><a href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan">🪳 Pluskwy</a></li>
+            <li><a href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan">🦗 Karaluchy</a></li>
+            <li><a href="/dezynsekcja-poznan/mrowki-poznan">🐜 Mrówki</a></li>
+            <li><a href="/dezynsekcja-poznan/osy-szerszenie-poznan">🐝 Osy i szerszenie</a></li>
+            <li><a href="/deratyzacja-poznan">🐭 Deratyzacja</a></li>
+            <li><a href="/ozonowanie-poznan">💨 Ozonowanie</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Dla biznesu</h4>
+          <ul>
+            <li><a href="/b2b/restauracje">🍽️ Restauracje</a></li>
+            <li><a href="/b2b/magazyny-hurtownie">📦 Magazyny</a></li>
+            <li><a href="/b2b/wspolnoty-mieszkaniowe">🏢 Wspólnoty</a></li>
+            <li><a href="/b2b/hotele">🏨 Hotele</a></li>
+            <li><a href="/b2b/biura">💼 Biura</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-col">
+          <h4>Informacje</h4>
+          <ul>
+            <li><a href="/cennik">Cennik</a></li>
+            <li><a href="/opinie">Opinie (300+ Google)</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/kontakt">Formularz kontaktowy</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Usługi</h4>
-        <ul>
-          <li><a href="/dezynsekcja-poznan/zwalczanie-pluskiew-poznan">🪳 Pluskwy</a></li>
-          <li><a href="/dezynsekcja-poznan/zwalczanie-karaluchow-poznan">🦗 Karaluchy</a></li>
-          <li><a href="/dezynsekcja-poznan/mrowki-poznan">🐜 Mrówki</a></li>
-          <li><a href="/dezynsekcja-poznan/osy-szerszenie-poznan">🐝 Osy i szerszenie</a></li>
-          <li><a href="/deratyzacja-poznan">🐭 Deratyzacja</a></li>
-          <li><a href="/ozonowanie-poznan">💨 Ozonowanie</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Dla biznesu</h4>
-        <ul>
-          <li><a href="/b2b/restauracje">🍽️ Restauracje</a></li>
-          <li><a href="/b2b/magazyny-hurtownie">📦 Magazyny</a></li>
-          <li><a href="/b2b/wspolnoty-mieszkaniowe">🏢 Wspólnoty</a></li>
-          <li><a href="/b2b/hotele">🏨 Hotele</a></li>
-          <li><a href="/b2b/biura">💼 Biura</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Informacje</h4>
-        <ul>
-          <li><a href="/cennik">Cennik</a></li>
-          <li><a href="/opinie">Opinie (300+ Google)</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/kontakt">Formularz kontaktowy</a></li>
-        </ul>
+      
+      <div class="footer-bottom mt-5 border-top pt-4 color-muted text-sm flex-between align-center">
+        <div>© <span data-year>2026</span> dezynsekcja-poznan.pl - Profesjonalna dezynsekcja, deratyzacja i dezynfekcja w Poznaniu.</div>
       </div>
     </div>
-    <div class="container" style="margin-top: 14px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px;">© <span data-year>2026</span> dezynsekcja-poznan.pl - Profesjonalna dezynsekcja, deratyzacja i dezynfekcja w Poznaniu.</div>
   </footer>
 
-  <!-- STICKY CTA BAR (MOBILE ONLY) -->
-  <div class="sticky-cta-bar">
-    <a href="/kontakt" data-track="call_mobile">📝 Zostaw numer</a>
-    <a href="/kontakt" data-track="form_mobile">💬 Wycena</a>
-  </div>
-
-  <div class="sticky-cta-bar">
-    <a href="/kontakt" style="background: #10B981; flex: 1.4; font-size: 17px; display: flex; align-items: center; justify-content: center; gap: 8px;">📝 Zamów wizytę (formularz)</a>
+  <!-- MOBILE COMPACT CTA DOCK -->
+  <div class="mobile-cta-dock glass-dock d-none-desktop">
+    <a href="/kontakt" class="btn btn-primary d-flex justify-content-center pulse-soft">
+      <span>📝 Zamów wizytę (formularz)</span>
+    </a>
   </div>
 
   <script src="/assets/js/main.js"></script>
