@@ -1,4 +1,4 @@
-# 🗺️ LOCAL SEO ACTION PLAN — Dezynsekcja Poznań
+# 🗺️ LOCAL SEO ACTION PLAN - Dezynsekcja Poznań
 
 ## Strategia: Dominacja w Google Maps + Local Search "dezynsekcja poznań"
 
@@ -6,7 +6,7 @@
 
 ---
 
-## FAZA 1: Google My Business (GMB) Optimization — 48h
+## FAZA 1: Google My Business (GMB) Optimization - 48h
 
 ### Checklist GMB:
 - ✅ Kompletny profil (wszystkie pola)
@@ -21,16 +21,16 @@
 - ✅ Publikacje (zamieszczaj co tydzień post o nowych artykułach)
 
 ### Wideo na GMB:
-- Nagraj krótkie wideo (30 sec) — "Jak wygląda nasza dezynsekcja"
+- Nagraj krótkie wideo (30 sec) - "Jak wygląda nasza dezynsekcja"
 - Pokaż zespół, sprzęt, proces (bez specjalistów, o ile to możliwe)
 
 ---
 
-## FAZA 2: Citation Building (Cytacje Lokalne) — 1–2 tygodnie
+## FAZA 2: Citation Building (Cytacje Lokalne) - 1–2 tygodnie
 
 ### Top 15 katalogów do wysłania:
 1. **Google Maps** (już zrobione)
-2. **Yelp.com** — wpisz biznes
+2. **Yelp.com** - wpisz biznes
 3. **Dobrych Firm 3.0** (dobrych.pl)
 4. **PagineGialle.it** (katalog włoski ale obsługuje PL)
 5. **Katalog Białych Stron** (katalog.pl)
@@ -53,15 +53,15 @@ Wszystkie cytacje muszą mieć IDENTYCZNĄ informacje! Nawet jeden błąd = mnie
 
 ---
 
-## FAZA 3: Review Management — Ongoing
+## FAZA 3: Review Management - Ongoing
 
 ### Strategia Reviews:
 1. **Zbieraj reviews** na Google Maps (cel: 50+ opinii w 90 dni)
-   - Email do wszystkich klientów: "Zostaw opinię na Google — +10 zł zniżki na następny zabieg"
+   - Email do wszystkich klientów: "Zostaw opinię na Google - +10 zł zniżki na następny zabieg"
    - WhatsApp reminder po zabiegu: "Link do opinii"
    - SMS po 7 dniach: "Jak przebiegła wizyta?"
 
-2. **Respond do reviews** — WSZYSTKIE, w ciągu 24h
+2. **Respond do reviews** - WSZYSTKIE, w ciągu 24h
    - ✅ Pozytywne: dziękuj, zaproś do kontaktu w przyszłości
    - ⚠️ Negatywne: przepraszaj, oferuj rozwiązanie, zaproś do offline rozmowy
 
@@ -71,7 +71,7 @@ Wszystkie cytacje muszą mieć IDENTYCZNĄ informacje! Nawet jeden błąd = mnie
 
 ---
 
-## FAZA 4: Local Content Links — 1–2 tygodnie
+## FAZA 4: Local Content Links - 1–2 tygodnie
 
 ### Backlinki z witryn lokalnych (Poznań):
 - Kontakt do redakcji lokalnych (`gazetapoznanska.pl`, forum.gazeta.pl itp.)
@@ -80,12 +80,12 @@ Wszystkie cytacje muszą mieć IDENTYCZNĄ informacje! Nawet jeden błąd = mnie
 - Link do artykułu `/blog/ile-kosztuje-zwalczanie-pluskiew-poznan` w lokalnych katalogach
 
 ### Lokalne organizacje:
-- Polskie Stowarzyszenie Pracowników Dezynsekcji, Dezynfekcji i Deratyzacji (PSPDDD) — czy byliśmy już linkowi?
-- Krajowa Izba Gospodarcza — dodaj swój biznes
+- Polskie Stowarzyszenie Pracowników Dezynsekcji, Dezynfekcji i Deratyzacji (PSPDDD) - czy byliśmy już linkowi?
+- Krajowa Izba Gospodarcza - dodaj swój biznes
 
 ---
 
-## FAZA 5: Embedded Reviews Widget — 48h
+## FAZA 5: Embedded Reviews Widget - 48h
 
 ### Osadź opinie Google na stronie:
 **W `/assets/js/main.js`** dodaj kod (lub użyj Google Review API):
@@ -114,24 +114,24 @@ document.addEventListener('DOMContentLoaded', loadGoogleReviews);
 
 ---
 
-## FAZA 6: Monitoring & Reporting — Ongoing
+## FAZA 6: Monitoring & Reporting - Ongoing
 
 ### Metryki do trackowania (co tydzień):
-- 📊 **GMB Views** — ile razy ludzie przeszukali profil
-- 📍 **Google Maps Ranking** — pozycja dla "dezynsekcja poznań"
-- ⭐ **Average Rating** — śr. ocena Google
-- 📞 **Phone/Call Clicks** — ile kliknęli "Zadzwoń"
-- 📁 **Website Clicks** — ile kliknęli link do strony
-- 💬 **Reviews Count** — liczba nowych opinii (cel: +3–5/tydzień)
+- 📊 **GMB Views** - ile razy ludzie przeszukali profil
+- 📍 **Google Maps Ranking** - pozycja dla "dezynsekcja poznań"
+- ⭐ **Average Rating** - śr. ocena Google
+- 📞 **Phone/Call Clicks** - ile kliknęli "Zadzwoń"
+- 📁 **Website Clicks** - ile kliknęli link do strony
+- 💬 **Reviews Count** - liczba nowych opinii (cel: +3–5/tydzień)
 
 ### Narzędzia monitoringowe:
-- **Google Search Console** — track impressions & clicks dla local keywords
-- **Google Analytics 4** — track traffic z Google Maps / Local Search
-- **GMB Analytics** — wbudowane w panel GMB
+- **Google Search Console** - track impressions & clicks dla local keywords
+- **Google Analytics 4** - track traffic z Google Maps / Local Search
+- **GMB Analytics** - wbudowane w panel GMB
 
 ---
 
-## FAZA 7: Local Keyword Strategy — Immediate
+## FAZA 7: Local Keyword Strategy - Immediate
 
 ### Target local keywords dla SEO:
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', loadGoogleReviews);
 
 ---
 
-## FAZA 8: Local Link Building — 2–4 tygodnie
+## FAZA 8: Local Link Building - 2–4 tygodnie
 
 ### Outreach do lokalnych stron:
 
@@ -188,7 +188,7 @@ Pozdrawiam,
 
 ---
 
-## FAZA 9: Mobile Local SEO — Immediate
+## FAZA 9: Mobile Local SEO - Immediate
 
 ### Optimizacje mobilne (60% traffic to mobile):
 - ✅ Click-to-call button (już zrobione)

@@ -1,4 +1,4 @@
-# 🚨 Dezynsekcja Poznań — Strona internetowa High-Conversion
+# 🚨 Dezynsekcja Poznań - Strona internetowa High-Conversion
 
 **Status:** ✅ Production Ready | **Hosting:** GitHub Pages | **2026 UX Standards** 
 
@@ -180,11 +180,11 @@ Update footer/header with actual business details:
 | WhatsApp | "💬 WhatsApp" | `whatsapp_click` | 2–4% |
 
 ### Tracked Events (GA4)
-- `call_click` — Phone button clicked (desktop/mobile)
-- `call_mobile` — From sticky bottom bar (mobile-only)
-- `form_submit` — Form submission
-- `whatsapp_click` — WhatsApp link click
-- `form_mobile` — Sticky bar form link
+- `call_click` - Phone button clicked (desktop/mobile)
+- `call_mobile` - From sticky bottom bar (mobile-only)
+- `form_submit` - Form submission
+- `whatsapp_click` - WhatsApp link click
+- `form_mobile` - Sticky bar form link
 
 ### Analytics Dashboard
 Set up in GA4:
