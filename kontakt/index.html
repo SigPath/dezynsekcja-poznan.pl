@@ -34,6 +34,8 @@
     .contact-actions { display: flex; gap: 12px; align-items: center; margin-top: 4px; }
     .contact-status { font-size: 14px; }
     .hidden { display: none; }
+    .success-card { text-align: center; display: grid; gap: 10px; }
+    .success-icon { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 6px; background: rgba(16, 185, 129, 0.16); display: grid; place-items: center; font-size: 30px; color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); }
   </style>
 
   <!-- GA4 TRACKING (replace with your actual measurement ID) -->
@@ -60,34 +62,41 @@
     <section class="section">
       <h2>Formularz szybkiej wyceny — 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
-      <form id="contact-form" class="contact-card" action="https://formspree.io/f/mvoeyrjr" method="POST">
-        <div class="contact-grid">
-          <label class="contact-label" for="name">Imię i nazwisko *</label>
-          <input class="contact-input" id="name" name="entry.1604605425" type="text" required autocomplete="name" placeholder="Jan Kowalski">
 
-          <label class="contact-label" for="phone">Telefon *</label>
-          <input class="contact-input" id="phone" name="entry.1385428490" type="tel" required inputmode="tel" placeholder="600 000 000">
+      <div id="contact-success" class="contact-card success-card hidden">
+        <div class="success-icon">✓</div>
+        <h3>Dziękujemy! Formularz wysłany</h3>
+        <p class="contact-hint">Oddzwonimy w 15 minut (7–22). Jeśli chcesz, możesz wysłać kolejne zgłoszenie.</p>
+        <button class="cta-btn" onclick="window.location.reload()">Wyślij kolejne zgłoszenie</button>
+      </div>
+
+      <form id="contact-form" class="contact-card" action="https://docs.google.com/forms/d/e/1FAIpQLSdAIeNqL2GM1bFLuJTe6dcHdlF_ayL1QhSaSoi3caEIuyMBSw/formResponse" method="POST" target="form-target">
+        <div class="contact-grid" id="contact-panel">
+          <label class="contact-label" for="name">Imię i nazwisko *</label>
+          <input class="contact-input" id="name" name="entry.1719035662" type="text" required autocomplete="name" placeholder="Jan Kowalski">
+
+          <label class="contact-label" for="phone">Telefon</label>
+          <input class="contact-input" id="phone" name="entry.1349673922" type="tel" inputmode="tel" placeholder="np. +48 600 000 000">
 
           <label class="contact-label" for="problem">Problem (co się dzieje?) *</label>
-          <select class="contact-select" id="problem" name="entry.131674857" required>
+          <select class="contact-select" id="problem" name="entry.1503664305" required>
             <option value="" disabled selected>Wybierz</option>
-            <option>Pluskwy w łóżku/meblach</option>
-            <option>Karaluchy / prusaki</option>
-            <option>Mrówki faraona</option>
-            <option>Osy / szerszenie</option>
-            <option>Deratyzacja (myszy/szczury)</option>
-            <option>Dezynfekcja / zapach / grzyb</option>
-            <option>Inne</option>
+            <option value="Pluskwy w łóżku / meblach">Pluskwy w łóżku / meblach</option>
+            <option value="Karaluchy / Prusaki">Karaluchy / Prusaki</option>
+            <option value="Mrówki faraona">Mrówki faraona</option>
+            <option value="Osy / Szerszenie">Osy / Szerszenie</option>
+            <option value="Deratyzacja (szczury / myszy)">Deratyzacja (szczury / myszy)</option>
+            <option value="Dezynfekcja (zapach / grzyb)">Dezynfekcja (zapach / grzyb)</option>
+            <option value="Inne">Inne</option>
           </select>
 
           <label class="contact-label" for="details">Dodatkowe info (opcjonalnie)</label>
-          <textarea class="contact-textarea" id="details" name="entry.681572499" placeholder="Metraż, lokalizacja gniazda, kiedy zauważono problem…"></textarea>
+          <textarea class="contact-textarea" id="details" name="entry.2012331230" placeholder="Metraż, lokalizacja gniazda, kiedy zauważono problem…"></textarea>
 
           <div class="contact-actions">
-            <button type="submit" class="cta-btn">Wyślij</button>
-            <span id="status" class="contact-status"></span>
+            <button type="submit" class="cta-btn">Wyślij zgłoszenie</button>
           </div>
-          <p class="contact-hint">Oddzwonimy w ciągu 15 minut (godz. 7–22). Dane trafiają do Google Forms → Google Sheets.</p>
+          <p class="contact-hint">Oddzwonimy w ciągu 15 minut (godz. 7–22). Dane trafiają bezpośrednio do Google Forms → Google Sheets.</p>
         </div>
       </form>
       <div class="highlight" style="margin-top: 16px;">
@@ -149,36 +158,35 @@
   <script>
     (function() {
       const form = document.getElementById('contact-form');
-      const statusEl = document.getElementById('status');
+      const successCard = document.getElementById('contact-success');
+      const formPanel = document.getElementById('contact-panel');
+      const submitBtn = form?.querySelector('button[type="submit"]');
       if (!form) return;
-      const submitBtn = form.querySelector('button[type="submit"]');
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        statusEl.textContent = 'Wysyłanie…';
-        statusEl.style.color = 'var(--muted)';
-        if (submitBtn) submitBtn.disabled = true;
+      window.__formSubmitted = false;
 
-        const formData = new FormData(form);
-
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: formData,
-          });
-          if (!res.ok) throw new Error('network');
-          statusEl.textContent = '✅ Wysłane! Oddzwonimy w 15 min.';
-          statusEl.style.color = 'var(--primary)';
-          form.reset();
-        } catch (err) {
-          statusEl.textContent = '❌ Nie udało się wysłać. Spróbuj ponownie.';
-          statusEl.style.color = '#f87171';
-        } finally {
-          if (submitBtn) submitBtn.disabled = false;
+      form.addEventListener('submit', () => {
+        window.__formSubmitted = true;
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Wysyłanie…';
         }
       });
+
+      window.showSuccess = function showSuccess() {
+        if (!window.__formSubmitted) return;
+        if (formPanel) formPanel.classList.add('hidden');
+        if (successCard) successCard.classList.remove('hidden');
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Wyślij zgłoszenie';
+        }
+        window.__formSubmitted = false;
+      };
     })();
   </script>
+
+  <iframe name="form-target" id="form-target" class="hidden" onload="if(window.__formSubmitted){ showSuccess(); }"></iframe>
 </body>
 </html>
