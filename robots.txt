@@ -10,5 +10,3 @@ Sitemap: https://dezynsekcja-poznan.pl/sitemap.xml
 Crawl-delay: 1
 Request-rate: 30/60
 
-# Contact via phone
-Contact: tel:+48720638628
