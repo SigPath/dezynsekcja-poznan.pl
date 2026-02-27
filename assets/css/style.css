@@ -164,33 +164,34 @@ header {
 
 /* STICKY MOBILE CTA BAR */
 @media (max-width: 768px) {
-  body { padding-bottom: 70px; }
+  body { padding-bottom: 80px; }
   
   .sticky-cta-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--primary);
+    background: #111827;
     display: flex;
     gap: 0;
-    z-index: 30;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .sticky-cta-bar a {
     flex: 1;
-    padding: 14px;
+    padding: 16px;
     text-align: center;
     font-weight: 700;
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .sticky-cta-bar a:first-child {
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
   }
 }
 
