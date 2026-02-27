@@ -103,7 +103,8 @@ header {
 .section p.lead { color: var(--text-secondary); margin-bottom: 28px; font-size: 17px; line-height: 1.7; }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.card { background: rgba(26, 35, 50, 0.6); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; transition: all 200ms ease; backdrop-filter: blur(4px); }
+.card { background: rgba(26, 35, 50, 0.6); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; transition: all 200ms ease; backdrop-filter: blur(4px); height: 100%; }
+.card .cta-btn { margin-top: auto; width: 100%; text-align: center; }
 .card:hover { background: rgba(26, 35, 50, 0.9); border: 1px solid rgba(220, 38, 38, 0.3); }
 .card h3 { font-size: 20px; font-family: 'Inter'; font-weight: 700; }
 .card p { color: var(--text-secondary); font-size: 15px; }
