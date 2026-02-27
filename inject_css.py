@@ -1,0 +1,162 @@
+import os
+import re
+
+CSS_CONTENT = """
+/* Legacy CSS Classes for Content Bodies */
+:root {
+  --primary-rgb: 220, 38, 38;
+}
+
+.cta-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(var(--primary-rgb), 0.3);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-btn:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(var(--primary-rgb), 0.4);
+}
+.cta-btn:active { transform: translateY(0); }
+
+.hero { padding: 60px 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.badge { background: rgba(220, 38, 38, 0.1); color: #FCA5A5; padding: 6px 12px; border-radius: 20px; font-weight: 700; border: 1px solid rgba(220, 38, 38, 0.3); font-size: 13px; }
+.hero h1 { font-family: 'Inter', sans-serif; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.02em; line-height: 1.2; font-weight: 800; margin-bottom: 12px; }
+.hero p { color: var(--text-muted); margin: 16px 0 24px; font-size: 17px; line-height: 1.7; }
+.hero-card { background: rgba(26, 35, 50, 0.8); padding: 28px; border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); backdrop-filter: blur(8px); }
+.hero-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 20px; }
+.metric { padding: 14px 12px; border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.2); background: rgba(220, 38, 38, 0.05); text-align: center; }
+.metric strong { display: block; font-size: 24px; font-weight: 800; color: #FCA5A5; margin-bottom: 4px; }
+.metric span { color: var(--text-muted); font-size: 13px; font-weight: 500; }
+
+.section { padding: 60px 0; }
+.section h2 { font-family: 'Inter'; font-size: clamp(24px, 4vw, 36px); letter-spacing: -0.02em; margin-bottom: 12px; font-weight: 800; }
+.section p.lead { color: var(--text-muted); margin-bottom: 28px; font-size: 17px; line-height: 1.7; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card { background: rgba(26, 35, 50, 0.6); border-radius: var(--radius-lg); padding: 24px; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 12px; transition: all 200ms ease; backdrop-filter: blur(4px); height: 100%; }
+.card .cta-btn { margin-top: auto; width: 100%; text-align: center; }
+.card:hover { background: rgba(26, 35, 50, 0.9); border: 1px solid rgba(220, 38, 38, 0.3); }
+.card h3 { font-size: 20px; font-family: 'Inter'; font-weight: 700; }
+.card p { color: var(--text-muted); font-size: 15px; }
+
+.list { display: grid; gap: 10px; margin: 16px 0; }
+.list li { list-style: none; padding: 12px 14px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-light); color: var(--text-muted); font-size: 15px; display: flex; gap: 8px; }
+.list li::before { content: '✓'; color: var(--success); font-weight: 800; flex-shrink: 0; }
+
+.table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.table th, .table td { border: 1px solid var(--border-light); padding: 12px; text-align: left; }
+.table th { background: rgba(255, 255, 255, 0.04); font-weight: 700; }
+.table td { color: var(--text-muted); }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
+
+.faq-item { background: rgba(255, 255, 255, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); }
+.faq-item h4 { font-family: 'Sora', 'Inter', sans-serif; margin-bottom: 6px; }
+.faq-item p { color: var(--text-muted); }
+
+.badge-inline { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); color: #bbf7d0; border: 1px solid rgba(34, 197, 94, 0.3); font-weight: 700; }
+
+.breadcrumbs { display: flex; gap: 6px; margin-bottom: 14px; color: var(--text-muted); font-size: 14px; }
+.breadcrumbs a { color: var(--text-muted); }
+
+.hero-mini { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); padding: 18px; border-radius: var(--radius-lg); margin-bottom: 18px; }
+
+.highlight { background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.3); padding: 14px 16px; border-radius: 12px; color: #FCA5A5; font-weight: 600; font-size: 14px; }
+
+.tag-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { padding: 8px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-light); color: #e2e8f0; font-weight: 600; }
+
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.testimonial { border: 1px solid var(--border-light); padding: 16px; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.03); }
+.testimonial .name { font-weight: 700; }
+.testimonial .meta { color: var(--text-muted); font-size: 14px; }
+
+.contact-box { border: 1px solid var(--border-light); padding: 18px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.03); display: grid; gap: 10px; }
+.contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+
+@media (max-width: 640px) {
+  .contact-actions { gap: 8px; }
+  .contact-actions .cta-btn { flex: 1; min-width: 140px; }
+}
+.contact-actions a { background: rgba(255, 255, 255, 0.06); padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border-light); color: #fff; font-weight: 700; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; }
+
+.form { display: grid; gap: 12px; }
+.form label { display: grid; gap: 6px; color: #fff; font-weight: 600; }
+.form input, .form textarea { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-light); border-radius: 12px; padding: 10px; color: #fff; font-size: 16px; }
+.form textarea { min-height: 120px; resize: vertical; }
+
+.alert { padding: 12px 14px; background: rgba(34, 197, 94, 0.12); color: #bbf7d0; border-radius: 12px; border: 1px solid rgba(34, 197, 94, 0.4); }
+
+.article-list { display: flex; flex-direction: column; gap: 16px; }
+.article-item { display: flex; justify-content: space-between; align-items: center; padding: 20px; border: 1px solid var(--border-light); border-radius: 12px; background-color: var(--bg-card); }
+.article-item span { font-weight: 600; font-size: 17px; }
+.article-item .cta-btn { flex-shrink: 0; padding: 8px 16px; font-size: 14px; }
+"""
+
+def extract_and_inject(directory):
+    legacy_css_path = os.path.join(directory, 'assets', 'css', 'legacy_components.css')
+    os.makedirs(os.path.dirname(legacy_css_path), exist_ok=True)
+    with open(legacy_css_path, 'w', encoding='utf-8') as f:
+        f.write(CSS_CONTENT)
+    
+    HEAD_INJECTION = """
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/legacy_components.css">
+"""
+
+    count = 0
+    for root, dirs, files in os.walk(directory):
+        if '.venv' in root or '.git' in root:
+            continue
+        for file in files:
+            if file.endswith('.html'):
+                filepath = os.path.join(root, file)
+                
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                # Find <style> block
+                # we want to strip the entire <style> block and then inject our <link> tags
+                # we only want to do it if the <style> block is large (indicating it's the inline design system)
+                # some files might just have small style blocks, but mostly we know they have the huge one.
+                
+                # Check if it has DESIGN SYSTEM 2026
+                if 'DESIGN SYSTEM 2026' in content:
+                    # Remove the entire <style> ... </style> block
+                    content = re.sub(r'<style>.*?</style>', HEAD_INJECTION, content, flags=re.DOTALL)
+                    
+                    # Ensure we didn't inject multiple HEAD_INJECTIONs if we didn't remove anything, but re.sub handles that
+                    
+                    # Also replace any existing fonts if they exist to prevent duplicates
+                    # Actually just writing it is fine, the head injection handles defaults.
+                    
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"Updated {filepath}")
+                    count += 1
+                elif 'legacy_components' not in content:
+                    # fallback if no inline style found but it's an html file missing the link
+                    content = content.replace('</head>', HEAD_INJECTION + '</head>')
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    count += 1
+
+    print(f"Total HTML files updated: {count}")
+
+if __name__ == '__main__':
+    extract_and_inject('/Users/marcin/Desktop/Skrypty/Visual Studio Code/dezynsekcja-poznan.pl')
