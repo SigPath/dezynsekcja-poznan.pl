@@ -1178,7 +1178,8 @@ h4 {
     display: none;
   }
 
-  .modern-bento-grid {
+  .modern-bento-grid,
+  .bento-grid-2x2 {
     grid-template-columns: 1fr;
   }
 
