@@ -56,6 +56,8 @@ Web Vitals Optimized | WCAG 2.2 | Mobile First
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 body.theme-dark {
@@ -65,7 +67,8 @@ body.theme-dark {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
+  overflow-x: hidden;
+  width: 100%;
   position: relative;
 }
 
