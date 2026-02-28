@@ -69,13 +69,58 @@
       <h2>Formularz szybkiej wyceny - 4 pola, 2 minuty</h2>
       <p class="lead">Wypełnij poniżej, a my przezwonimy z ceną i umówimy wizytę w 2h.</p>
 
-      <div class="contact-card" style="padding: 0; overflow: hidden; max-width: 800px; margin: 0 auto;">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeSb0pg5hN9zxyixLISVYqs2slBUlShACiszYOqgcaT60EU8w/viewform?embedded=true"
-          width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0"
-          style="border: none; border-radius: 12px; display: block;">Ładuję formularz...</iframe>
+      <div id="success-message" class="contact-card success-card hidden"
+        style="text-align: center; padding: 40px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light);">
+        <div
+          style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; color: var(--success); font-size: 40px; border: 1px solid rgba(16,185,129,0.2);">
+          ✓</div>
+        <h2 style="margin-bottom: 16px;">Dziękujemy!</h2>
+        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 32px;">Twoje zgłoszenie zostało pomyślnie
+          wysłane. Odezwiemy się najszybciej jak to możliwe (zazwyczaj w 15 minut).</p>
+        <button class="cta-btn" onclick="window.location.reload()">Wyślij kolejne zgłoszenie</button>
       </div>
-      <div class="highlight" style="margin-top: 16px;">
+
+      <div class="contact-card" id="form-panel"
+        style="padding: 32px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light);">
+        <form class="form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSdAIeNqL2GM1bFLuJTe6dcHdlF_ayL1QhSaSoi3caEIuyMBSw/formResponse"
+          method="POST" target="hidden_iframe"
+          onsubmit="submitted=true; const btn = this.querySelector('button'); btn.innerText='Wysyłanie...'; btn.style.opacity='0.7';">
+          <label>Imię i nazwisko *
+            <input type="text" name="entry.1719035662" placeholder="Jan Kowalski" required>
+          </label>
+          <label>Telefon
+            <input type="tel" name="entry.1349673922" placeholder="np. +48 123 456 789">
+          </label>
+          <label>Problem (co się dzieje?) *
+            <select name="entry.1503664305" required
+              style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 12px 16px; color: white; font-size: 16px; width: 100%; cursor: pointer;">
+              <option value="" disabled selected>Wybierz</option>
+              <option value="Pluskwy w łóżku / meblach">Pluskwy w łóżku / meblach</option>
+              <option value="Karaluchy / Prusaki">Karaluchy / Prusaki</option>
+              <option value="Mrówki faraona">Mrówki faraona</option>
+              <option value="Osy / Szerszenie">Osy / Szerszenie</option>
+              <option value="Deratyzacja (szczury / myszy)">Deratyzacja (szczury / myszy)</option>
+              <option value="Dezynfekcja (zapach / grzyb)">Dezynfekcja (zapach / grzyb)</option>
+              <option value="Inne">Inne</option>
+            </select>
+          </label>
+          <label>Dodatkowe info (opcjonalnie)
+            <textarea name="entry.2012331230" placeholder="Dodatkowe informacje, które mogą pomóc..."></textarea>
+          </label>
+          <button type="submit" class="cta-btn shine-effect" style="width: 100%; margin-top: 16px;">Wyślij
+            zgłoszenie</button>
+        </form>
+        <p class="contact-hint"
+          style="color: var(--text-muted); font-size: 13px; margin-top: 24px; text-align: center;">Oddzwonimy w ciągu 15
+          minut (godz. 7–22). Dane trafiają bezpiecznie bezpośrednio do nas.</p>
+      </div>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"
+        onload="if(typeof submitted !== 'undefined' && submitted) { document.getElementById('form-panel').style.display='none'; document.getElementById('success-message').classList.remove('hidden'); window.scrollTo({top: 0, behavior: 'smooth'}); }"></iframe>
+      <script>var submitted = false;</script>
+
+      <div class="highlight" style="margin-top: 24px;">
         💡 <strong>Porada:</strong> Oddzwonimy w ciągu 15 minut i ustalimy szczegóły interwencji.
       </div>
     </section>
