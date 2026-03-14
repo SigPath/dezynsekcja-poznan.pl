@@ -75,7 +75,7 @@ export default function KontaktPage() {
               <h2 className="text-3xl font-bold text-white mb-2">Zostaw numer</h2>
               <p className="text-gray-400 mb-8">Zostaw swój numer telefonu lub e-mail, a nasz specjalista skontaktuje się z Tobą w ciągu 15 minut.</p>
               
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" action="#">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Imię i nazwisko</label>
                   <input 
