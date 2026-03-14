@@ -1,29 +1,6 @@
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-*.swp
-*.swo
-
-# IDE
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Build/Production
-node_modules/
-dist/
-build/
-
-# Env
+node_modules
+.next
+.legacy
 .env
 .env.local
-.env.*.local
-
-# Logs
-*.log
-npm-debug.log*
-
-# OS
-Thumbs.db
+.DS_Store
